@@ -1,17 +1,17 @@
-import { exec } from 'node:child_process';
-import { promisify } from 'node:util';
-import * as vscode from 'vscode';
+import { exec } from "node:child_process";
+import { promisify } from "node:util";
+import * as vscode from "vscode";
 
 const execAsync = promisify(exec);
 
 export function activate(context: vscode.ExtensionContext) {
 	const disposable = vscode.commands.registerCommand(
-		'git-add-force.addForce',
+		"git-add-force.addForce",
 		async (uri: vscode.Uri, uris: vscode.Uri[]) => {
 			const targets = uris && uris.length > 0 ? uris : uri ? [uri] : [];
 
 			if (targets.length === 0) {
-				vscode.window.showWarningMessage('No files selected.');
+				vscode.window.showWarningMessage("No files selected.");
 				return;
 			}
 
@@ -19,7 +19,7 @@ export function activate(context: vscode.ExtensionContext) {
 				targets[0],
 			);
 			if (!workspaceFolder) {
-				vscode.window.showErrorMessage('No workspace folder found.');
+				vscode.window.showErrorMessage("No workspace folder found.");
 				return;
 			}
 
@@ -27,14 +27,14 @@ export function activate(context: vscode.ExtensionContext) {
 
 			try {
 				await execAsync(
-					`git add --force -- ${filePaths.map((p) => `"${p}"`).join(' ')}`,
+					`git add --force -- ${filePaths.map((p) => `"${p}"`).join(" ")}`,
 					{
 						cwd: workspaceFolder.uri.fsPath,
 					},
 				);
 				const fileCount = filePaths.length;
 				vscode.window.showInformationMessage(
-					`Force added ${fileCount} file${fileCount > 1 ? 's' : ''} to git.`,
+					`Force added ${fileCount} file${fileCount > 1 ? "s" : ""} to git.`,
 				);
 			} catch (error) {
 				const message =

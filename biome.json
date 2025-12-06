@@ -26,11 +26,10 @@
 	},
 	"javascript": {
 		"formatter": {
-			"semicolons": "always",
-			"quoteStyle": "single"
+			"semicolons": "always"
 		}
 	},
 	"files": {
-		"include": ["src/**/*.ts"]
+		"include": ["src/**/*.ts", "**/*.json", "**/*.mjs", ".*.mjs"]
 	}
 }

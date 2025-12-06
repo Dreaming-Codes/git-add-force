@@ -1,15 +1,15 @@
-import { defineConfig } from 'rolldown';
+import { defineConfig } from "rolldown";
 
-const production = process.env.NODE_ENV === 'production';
+const production = process.env.NODE_ENV === "production";
 
 export default defineConfig({
-	input: 'src/extension.ts',
+	input: "src/extension.ts",
 	output: {
-		file: 'dist/extension.js',
-		format: 'cjs',
+		file: "dist/extension.js",
+		format: "cjs",
 		sourcemap: !production,
 	},
-	platform: 'node',
-	external: ['vscode'],
+	platform: "node",
+	external: ["vscode"],
 	minify: production,
 });
