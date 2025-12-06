@@ -7,9 +7,9 @@ export default defineConfig({
 	output: {
 		file: "dist/extension.js",
 		format: "cjs",
-		sourcemap: !production,
+		sourcemap: !production
 	},
 	platform: "node",
 	external: ["vscode"],
-	minify: production,
+	minify: production
 });

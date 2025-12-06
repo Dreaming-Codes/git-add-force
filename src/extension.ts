@@ -16,7 +16,7 @@ export function activate(context: vscode.ExtensionContext) {
 			}
 
 			const workspaceFolder = vscode.workspace.getWorkspaceFolder(
-				targets[0],
+				targets[0]
 			);
 			if (!workspaceFolder) {
 				vscode.window.showErrorMessage("No workspace folder found.");
@@ -29,21 +29,21 @@ export function activate(context: vscode.ExtensionContext) {
 				await execAsync(
 					`git add --force -- ${filePaths.map((p) => `"${p}"`).join(" ")}`,
 					{
-						cwd: workspaceFolder.uri.fsPath,
-					},
+						cwd: workspaceFolder.uri.fsPath
+					}
 				);
 				const fileCount = filePaths.length;
 				vscode.window.showInformationMessage(
-					`Force added ${fileCount} file${fileCount > 1 ? "s" : ""} to git.`,
+					`Force added ${fileCount} file${fileCount > 1 ? "s" : ""} to git.`
 				);
 			} catch (error) {
 				const message =
 					error instanceof Error ? error.message : String(error);
 				vscode.window.showErrorMessage(
-					`Failed to force add: ${message}`,
+					`Failed to force add: ${message}`
 				);
 			}
-		},
+		}
 	);
 
 	context.subscriptions.push(disposable);
