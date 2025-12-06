@@ -29,18 +29,6 @@
           "group": "7_modification",
           "when": "explorerResourceIsFolder || !explorerResourceIsFolder"
         }
-      ],
-      "editor/title/context": [
-        {
-          "command": "git-add-force.addForce",
-          "group": "7_modification"
-        }
-      ],
-      "scm/resourceState/context": [
-        {
-          "command": "git-add-force.addForce",
-          "group": "inline"
-        }
       ]
     }
   },
