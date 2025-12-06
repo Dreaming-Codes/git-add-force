@@ -1,6 +1,6 @@
 import { defineConfig } from 'rolldown';
 
-const production = process.argv.includes('--production') || process.env.NODE_ENV === 'production';
+const production = process.env.NODE_ENV === 'production';
 
 export default defineConfig({
 	input: 'src/extension.ts',
