@@ -14,10 +14,31 @@
   "contributes": {
     "commands": [
       {
-        "command": "git-add-force.helloWorld",
-        "title": "Hello World"
+        "command": "git-add-force.addForce",
+        "title": "Git: Add --force"
       }
-    ]
+    ],
+    "menus": {
+      "explorer/context": [
+        {
+          "command": "git-add-force.addForce",
+          "group": "7_modification",
+          "when": "explorerResourceIsFolder || !explorerResourceIsFolder"
+        }
+      ],
+      "editor/title/context": [
+        {
+          "command": "git-add-force.addForce",
+          "group": "7_modification"
+        }
+      ],
+      "scm/resourceState/context": [
+        {
+          "command": "git-add-force.addForce",
+          "group": "inline"
+        }
+      ]
+    }
   },
   "scripts": {
     "vscode:prepublish": "bun run package",
