@@ -17,7 +17,7 @@
 		"commands": [
 			{
 				"command": "git-add-force.addForce",
-				"title": "Git: Add --force"
+				"title": "Add File to Git (force)"
 			}
 		],
 		"menus": {
