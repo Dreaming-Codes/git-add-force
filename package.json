@@ -1,6 +1,7 @@
 {
 	"name": "git-add-force",
 	"displayName": "Git add force",
+	"publisher": "DreamingCodes",
 	"description": "Add git add --force to the vscode right click menu",
 	"version": "0.0.1",
 	"repository": {
