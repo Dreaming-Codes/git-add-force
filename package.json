@@ -3,6 +3,10 @@
   "displayName": "Git add force",
   "description": "Add git add --force to the vscode right click menu",
   "version": "0.0.1",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Dreaming-Codes/git-add-force"
+  },
   "engines": {
     "vscode": "^1.106.1"
   },
